@@ -1,0 +1,25 @@
+server:
+  port: 8088
+  servlet:
+    encoding:  # 防止中文乱码
+      enabled: true
+      force: true
+      charset: UTF-8
+spring:
+  application:
+    name: SpringAIOllama
+  ai:
+    # 本地大模型配置
+    dashscope:
+      api-key: ${OllamaApiKey:sk-replace-with-your-gateway-key}
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen3:4b
+        temperature: 0.7  # 聊天发散度   0-2
+    # 在线大模型配置，虽然在配置文件里做了多模型兼容，但是这里的配置必须保留，否则会因为缺少 key 而启动失败
+    openai:
+      base-url: https://maas.qianwenaiapi.com/compatible-mode
+      api-key: ${OllamaApiKey}
+
+

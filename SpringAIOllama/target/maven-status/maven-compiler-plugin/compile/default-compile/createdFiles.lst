@@ -1,0 +1,4 @@
+com\springAI\SpringAIOllamaApplication.class
+com\springAI\config\LLMConfig.class
+com\springAI\controller\ChartController.class
+com\springAI\controller\ChartRemoteController.class
